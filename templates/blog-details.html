@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %} 
-{{ post.title }} - Blog Details
+  {{ post.title }} - Blog Details
 {% endblock %}
 {% block content %}
 
@@ -31,9 +31,9 @@
           <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image_url %}
-              <img class="img-fluid" src="{{post.image_url}}" alt="изображение поста">
+                <img class="img-fluid" src="{{post.image_url}}" alt="изображение поста">
               {% else %}
-              <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="банер">
+                <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="банер">
               {% endif %}
               <h4>{{post.title}}</h4>
               <div class="user_details">
@@ -63,22 +63,22 @@
             <div class="comments-area">
               <h4>{{post.comments|length}} Comments</h4>
               {% for post in post.comments %}
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      <h5><a href="#">{{post.author}}</a></h5>
-                      <p class="date">{{post.published_at}} </p>
-                      <p class="comment">
-                          {{post.text}}
-                      </p>
+                <div class="comment-list">
+                  <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                      <div class="desc">
+                        <h5><a href="#">{{post.author}}</a></h5>
+                        <p class="date">{{post.published_at}} </p>
+                        <p class="comment">
+                            {{post.text}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="reply-btn">
+                            <a href="" class="btn-reply text-uppercase">reply</a> 
                     </div>
                   </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	  
+                </div>	  
               {% endfor %}
             </div>
           </div>
